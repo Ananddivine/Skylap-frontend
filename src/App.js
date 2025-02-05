@@ -6,6 +6,8 @@ import Slider from './Components/Slider/Slider';
 import Navigation from './Components/Navbar/Navbar';
 import { ShopContext, ShopContextProvider } from './Context/ShopContext';
 import Home from './Pages/Home';
+import SearchiItemDisplay from './Components/Searchitem/SearchiItemDisplay';
+import Hero from './Components/Hero/Hero';
 
 
 const App = () => {
@@ -15,8 +17,11 @@ const App = () => {
     <Navigation />
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/search' element={<Hero />} />
       <Route path='/slider' element={<Slider />}/>
       <Route path='/ShopContext' element={<ShopContext />} />
+      <Route path='/searchitemsdisplay' element={<SearchiItemDisplay />} />
+      
     </Routes>
     </ShopContextProvider>
     </BrowserRouter> 

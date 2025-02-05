@@ -5,6 +5,10 @@
     width: 100%;
 
 }
+.slider p{
+  color: aliceblue;
+  font-weight: 800;
+}
 .carousel-caption{
     top: 50%;
     transform: translateY(-50%);
