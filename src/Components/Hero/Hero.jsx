@@ -79,7 +79,8 @@ console.log('Filtered Models:', filteredModels);
  <section className='section'>
  <div className='row'>
  <div className='colums'>
- <h1>About Us</h1>
+ <h1>About <b>Us</b></h1>
+ <div className="underline"><span></span></div>
  <p>Skylap is a leading Laptop Service Center in Bangalore which deals with Major laptop brands like Dell, Lenovo, Acer, Toshiba, Sony, Hp, Asus,
    Samsung. Skylap supplies IT products to many leading companies and institutions. Also provides quality service to many individuals as well as to companies
    on AMC basis.We have excellent 13 years of experienced technicians.and skylap products are provided with the warranty and geniuen spars reaplacement for
@@ -87,6 +88,8 @@ console.log('Filtered Models:', filteredModels);
  </div>
   <div className='colums'>
     <h1>Our Service</h1>
+ <div className="underline"><span></span></div>
+
     <div className="skills-bar">
   <p>Laptop <b>service</b></p>
   <div className="progress">
@@ -127,26 +130,7 @@ console.log('Filtered Models:', filteredModels);
   <img src={applelogo} alt='Apple logo' />
 </div>
  </div>    
-  <div className='row'>
-      <div className='column'>
-        <h2>Featured Models</h2>
-        <p>Discover the latest in technology with our premium laptop models, crafted for unparalleled performance and style.</p>
-      </div>
-      <div className='column'>
-        <h2>Best Sellers</h2>
-        <p>Join the legion of satisfied customers who have chosen our best-selling laptops for their reliability and cutting-edge features.</p>
-      </div>
-      <div className='column'>
-        <h2>Special Offers</h2>
-        <p>Unlock exclusive deals and special offers on high-performance laptops. Your dream laptop is just a click away!</p>
-      </div>
-      <div className='column'>
-        <h2>Customer Reviews</h2>
-        <p>Read what our customers are saying about their LAPUNIVERSE experience. Join the community of happy laptop owners!</p>
-      </div>
-    </div>
   </div>
-
     </div>
   )
 }

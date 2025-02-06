@@ -8,6 +8,8 @@ import { ShopContext, ShopContextProvider } from './Context/ShopContext';
 import Home from './Pages/Home';
 import SearchiItemDisplay from './Components/Searchitem/SearchiItemDisplay';
 import Hero from './Components/Hero/Hero';
+import Getservices from './Components/Getservices/Getservices';
+import TestimonialsPage from "./Pages/TestimonialsPage";
 
 
 const App = () => {
@@ -21,7 +23,8 @@ const App = () => {
       <Route path='/slider' element={<Slider />}/>
       <Route path='/ShopContext' element={<ShopContext />} />
       <Route path='/searchitemsdisplay' element={<SearchiItemDisplay />} />
-      
+      <Route path='/Getservice' element={<Getservices />} />
+      <Route path="/testimonials" element={<TestimonialsPage />} />      
     </Routes>
     </ShopContextProvider>
     </BrowserRouter> 

@@ -42,6 +42,9 @@ body {
   .icons img{
     width: 70%;
   }
+  .icons {
+    background: #0e1015;
+  }
   
   /* For smaller devices (mobile view), ensure content is centered */
 @media (max-width: 768px) {
@@ -210,3 +213,63 @@ body {
     border-radius: 20px;
   }
   
+  .underline {
+    width: 40%;
+    height: 5px;
+    background: #0a7292;
+    border-radius: 3px;
+    position: relative;  /* Changed from absolute */
+    top: -20px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.underline span {
+    width: 15px;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: -15px; /* Start outside */
+    animation: ani 2s linear infinite;
+}
+
+@keyframes ani {
+    0% {
+        left: -15px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+.colums h1{
+ padding-bottom: 10px;
+
+}
+
+.colums p, .column p {
+  text-align: justify; /* Justifies the text evenly */
+  word-spacing: 2px;   /* Adjust word spacing */
+  line-height: 1.6;    /* Improves readability */
+}
+
+.colums p, .column p {
+  max-width: 90%; /* Prevents text from spanning the full width */
+  margin: auto;   /* Centers the text block */
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .colums p, .column p {
+    text-align: left; /* Align text to left for better readability */
+    padding: 10px;    /* Adds some spacing */
+  }
+}
+
+@media (max-width: 500px) {
+  .colums p, .column p {
+    font-size: 9px; /* Reduce font size on very small screens */
+    line-height: 1.1;
+  }
+}

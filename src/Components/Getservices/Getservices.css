@@ -1,0 +1,21 @@
+.underliner {
+    width: 150px;  /* Adjust width for better alignment */
+    height: 5px;
+    background: #0a7292;
+    border-radius: 3px;
+    position: relative;
+    margin: 0 auto; /* Center it */
+    top: -10px;
+    overflow: hidden;
+}
+
+.underliner span {
+    width: 15px;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    animation: ani 2s linear infinite;
+}
