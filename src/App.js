@@ -19,6 +19,7 @@ import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
 import Productdisplay from './Components/Productdisplay/Productdisplay';
 import About from './Pages/About';
+import Contact from './Components/Contact/Contact';
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           <Route path='/battery' element={<ShopCategory category="battery" />} />
           <Route path='/keyboard' element={<ShopCategory category="keyboard" />} />
           <Route path='/laptop' element={<ShopCategory category="laptop" />} />
+          <Route path='/Contact' element={<Contact />} />
     </Routes>
     <Whatsapp />
     <Footer />

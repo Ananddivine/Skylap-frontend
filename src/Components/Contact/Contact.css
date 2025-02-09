@@ -1,0 +1,126 @@
+
+  
+  .contact-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .contact-title {
+    text-align: center;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  .contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Contact Details Section */
+  .contact-details {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    min-width: 300px;
+  }
+  .contact-wrapper a{
+   border-bottom: none;
+   text-decoration: none;
+  }
+  .contact-details h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .contact-details p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-details li {
+    margin-bottom: 15px;
+    color: #34495e;
+    font-size: 16px;
+  }
+  
+  .contact-details .icon {
+    color: #3498db;
+    margin-right: 10px;
+  }
+  
+  /* Contact Form Section */
+  .contact-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    min-width: 300px;
+  }
+  
+  .contact-form h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Map Section */
+  .map-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .map-container iframe {
+    border: 0;
+    width: 90%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
