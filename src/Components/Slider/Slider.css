@@ -130,10 +130,11 @@
   }
   @media screen and (max-width: 600px) {
     .carousel-caption h5{
-      font-size: 10px;
+      font-size: 12px;
     }
     .carousel-caption{
       margin-bottom: 20px;
       padding-bottom: 10px;
     }
+
   }

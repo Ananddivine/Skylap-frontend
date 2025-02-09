@@ -23,7 +23,7 @@ const Slider = () => {
             <img className="d-block img-fluid" src={bannerImg} alt="First slide" />
             <div className="carousel-caption">
               <h5>WELCOME TO SkyLap</h5>
-              <p><strong>The Service Excellence</strong></p>            
+                  
             </div>
           </div>
 
@@ -31,7 +31,7 @@ const Slider = () => {
             <img className="d-block img-fluid" src={treeImg} alt="Second slide" />
             <div className="carousel-caption">
               <h5>WELCOME TO SKYLAP</h5>
-              <p><strong>The Service Excellence</strong></p>            
+                  
             </div>
           </div>
 
@@ -39,7 +39,7 @@ const Slider = () => {
             <img className="d-block img-fluid" src={backgroundImg} alt="Third slide" />
             <div className="carousel-caption">
               <h5>WELCOME TO SKYLAP</h5>
-              <p><strong>The Service Excellence</strong></p>            
+                  
             </div>
           </div>
         </div>
