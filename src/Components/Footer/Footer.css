@@ -1,0 +1,94 @@
+/* Footer Styling */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  /* Skylap Logo */
+  .footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo span {
+    color: #00cc66; /* Green color */
+  }
+  
+  /* Footer Container */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* Footer Columns */
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-column h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00cc66;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Footer Links */
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 8px 0;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #00cc66;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+  }
+  
+  .footer-bottom a {
+    color: #00cc66;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-column {
+      margin-bottom: 20px;
+    }
+  }
+  

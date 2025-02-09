@@ -134,6 +134,7 @@ console.log('Filtered Models:', filteredModels);
     </div>
   )
 }
+
  function isQueryMatch(model, searchQuery) {
       const queryWords = searchQuery.split(/\s+/); // Split the query into words
       
