@@ -7,7 +7,6 @@ import hplogo from '../../Components/Assets/hplogo.png';
 import asuslogo from '../../Components/Assets/asuslogo.png';
 import acerlogo from '../../Components/Assets/acerlogo.jpg';
 import microsoftlog from '../../Components/Assets/microsoftlogo.png';
-import applelogo from '../../Components/Assets/applelogo.jpg';
 import './Hero.css';
 import Products from '../../Pages/Products.jsx';
 import axiosInstance from '../axiosInstance/axiosInstance.jsx';
@@ -125,9 +124,6 @@ console.log('Filtered Models:', filteredModels);
 </div>
 <div className='col-md-2 col-4'>
   <img src={microsoftlog} alt='Windows logo' />
-</div>
-<div className='col-md-2 col-4'>
-  <img src={applelogo} alt='Apple logo' />
 </div>
  </div>    
   </div>
