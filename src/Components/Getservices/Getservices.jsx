@@ -14,20 +14,20 @@ import './Getservices.css'
 // Array of images with corresponding service names
 const services = [
   { image: img1, name: "Blue Screen issue" },
-  { image: img2, name: "Blue Screen issue" },
-  { image: img3, name: "Hinges issue" },
-  { image: img4, name: "hard disk issue" },
-  { image: img5, name: "Battery issue" },
-  { image: img6, name: "Keyboard issue" },
-  { image: img7, name: "Screen Replacement" },
-  { image: img8, name: "Fan issue" },
-  { image: img9, name: "Bios issue" },
+  { image: img2, name: "Hinges issue" },
+  { image: img3, name: "hard disk issue" },
+  { image: img4, name: "Battery issue" },
+  { image: img5, name: "Keyboard issue" },
+  { image: img6, name: "Screen Replacement" },
+  { image: img7, name: "Fan issue" },
+  { image: img8, name: "Bios issue" },
+  { image: img9, name: "Anti Virus" },
 ];
 
 const Getservices = () => {
   return (
     <div className="container my-4">
-      <h1 className="text-center mb-4">Our Services</h1> <div className="underliner"><span></span></div>    
+      <h1 className="text-center mb-4">Our Services</h1>    
 
       <div className="row">
         {services.map((service, index) => (
