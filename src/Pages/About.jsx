@@ -11,7 +11,7 @@ const About = () => {
     let typed;
     if (typedRef.current) {
       typed = new Typed(typedRef.current, {
-        strings: ["Hello", "Welcome to my website!", "Enjoy your stay!"],
+        strings: ["SkyLap Service", "Welcome to see About SkyLap!", "The Best Hospital For Laptops!"],
         typeSpeed: 50,
         backSpeed: 25,
         loop: true,
@@ -69,7 +69,7 @@ const About = () => {
               <p>
                 Skylap is a leading Laptop Service Center in Bangalore, dealing with major brands like Dell, Lenovo, Acer, Toshiba, Sony, HP, Asus, and Samsung.
               </p>
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form className="contact-forms" onSubmit={handleSubmit}>
                 <input
                   type="email"
                   name="Email"
@@ -139,7 +139,7 @@ const About = () => {
                 <div className="col-lg-3 col-md-3 col-sm-6">
                   <div className="counter-block-1 text-center">
                     <i className="fa fa-wrench"></i>
-                    <span className="counter">4739</span>
+                    <span className="counter">5739</span>
                     <p className="text-uppercase">Current Fixings</p>
                   </div>
                 </div>
