@@ -1,144 +1,286 @@
-import React, {useRef, useEffect, useState}from 'react'
+import React, { useRef, useEffect, useState, useContext } from "react";
+import SearchResults from "../SearchResults/SearchResults";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 
-import SearchResults from '../SearchResults/SearchResults.jsx';
-import { useLocation } from 'react-router-dom';
-import delllogo from '../../Components/Assets/delllogo.png';
-import hplogo from '../../Components/Assets/hplogo.png';
-import asuslogo from '../../Components/Assets/asuslogo.png';
-import acerlogo from '../../Components/Assets/acerlogo.jpg';
-import microsoftlog from '../../Components/Assets/microsoftlogo.png';
-import './Hero.css';
-import Products from '../../Pages/Products.jsx';
-import axiosInstance from '../axiosInstance/axiosInstance.jsx';
+import delllogo from "../../Components/Assets/delllogo.png";
+import hplogo from "../../Components/Assets/hplogo.png";
+import asuslogo from "../../Components/Assets/asuslogo.png";
+import acerlogo from "../../Components/Assets/acerlogo.jpg";
+import microsoftlog from "../../Components/Assets/microsoftlogo.png";
+import { ShopContext } from '../../Context/ShopContext';
 
+
+import "./Hero.css";
+
+import Products from "../../Pages/Products";
+import axiosInstance from "../axiosInstance/axiosInstance";
 
 const Hero = () => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const searchQuery = searchParams.get('search');
+  const locationObj = useLocation();
+  const { location } = useParams();
+  const navigate = useNavigate();
+  const { all_product } = useContext(ShopContext);
+
+  const cityName = location
+    ? location.replace(/-/g, " ")
+    : "Bangalore";
+
+  const searchParams = new URLSearchParams(locationObj.search);
+const searchQuery = decodeURIComponent(
+  searchParams.get("search") || ""
+);
+
   const searchResultsRef = useRef(null);
-  const [laptopModels, setAll_Product] = useState([]);
 
-  
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axiosInstance.get('/api/products');
-        console.log('Fetched products:', response.data);
-        setAll_Product(response.data);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
-  
-    fetchProducts();
-  }, []);
-  
+const laptopModels = all_product;
 
-  
-  
-  // Check if searchQuery is null or empty
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await axiosInstance.get("/api/products");
+  //       setLaptopModels(response.data);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
+
+  //   fetchProducts();
+  // }, []);
+
   const filteredModels = searchQuery
-    ? laptopModels.filter(model =>
+    ? laptopModels.filter((model) =>
         isQueryMatch(model, searchQuery.toLowerCase())
       )
     : [];
-  
- // Scroll to results section when searchQuery changes
- useEffect(() => {
-  if (searchResultsRef.current && searchQuery) {
-    // Delay the scroll to ensure the component has rendered
-    setTimeout(() => {
-      searchResultsRef.current.scrollIntoView({ behavior: 'smooth' });
-    }, 300); // Adjust delay as necessary
-  }
-}, [searchQuery]);
 
-console.log('Search Query:', searchQuery);
-console.log('Filtered Models:', filteredModels);
-  
-  console.log('Search Query:', searchQuery);
-  console.log('Filtered Models:', filteredModels);
+  useEffect(() => {
+    if (searchResultsRef.current && searchQuery) {
+      setTimeout(() => {
+        searchResultsRef.current.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 300);
+    }
+  }, [searchQuery]);
+
+  const locations = [
+    "koramangala",
+    "whitefield",
+    "marathahalli",
+    "electronic-city",
+    "indiranagar",
+    "banashankari",
+  ];
 
   return (
-    <div>
-     
+    <div className="hero">
 
-        <div className='hero'>
-    
-    <h1>SkyLap Service The Excellence</h1>
-    <p className='hero-items'>Explore the vast galaxy of cutting-edge laptops that redefine performance and innovation.</p>
-    {searchQuery && (
-      <SearchResults searchResults={filteredModels} searchParams={searchParams} ref={searchResultsRef}>
-        <Products laptopModels={filteredModels} />
-      </SearchResults>
-    )}
-    
+      {/* Main Heading */}
+      <h1>
+        Laptop Service Center in {cityName}
+      </h1>
 
- <section className='section'>
- <div className='row'>
- <div className='colums'>
- <h1>About <b>Us</b></h1>
- <div className="underline"><span></span></div>
- <p>Skylap is a leading Laptop Service Center in Bangalore which deals with Major laptop brands like Dell, Lenovo, Acer, Toshiba, Sony, Hp, Asus,
-   Samsung. Skylap supplies IT products to many leading companies and institutions. Also provides quality service to many individuals as well as to companies
-   on AMC basis.We have excellent 13 years of experienced technicians.and skylap products are provided with the warranty and geniuen spars reaplacement for
-   the best perfamans to the laptop.We fixes Allmost 99.9% laptop get repaired with the afordable prices .Skylap provides life to your laptop.</p>
- </div>
-  <div className='colums'>
-    <h1>Our Service</h1>
- <div className="underline"><span></span></div>
+      <h2>
+        Laptop Repair | Screen Replacement | Battery Replacement | SSD Upgrade
+      </h2>
 
-    <div className="skills-bar">
-  <p>Laptop <b>service</b></p>
-  <div className="progress">
-    <div className="progress-bar" style={{ width: '96%' }}>96%</div>
-  </div>
-  <p>CUSTOMER <b> SATISFACTION</b></p>
-  <div className="progress">
-    <div className="progress-bar" style={{ width: '98%' }}>98%</div>
-  </div>
-  <p>TRUST ON <b>SKYLAP</b></p>
-  <div className="progress">
-    <div className="progress-bar" style={{ width: '100%' }}>100%</div>
-  </div>
-</div>
-       </div>   
-       </div>
-     </section>
-    
- {/*-------------ICONS----------------------*/}
+      <p className="hero-items">
+        SkyLap Laptop Service Center provides professional laptop repair
+        services in {cityName}. We repair Dell, HP, Lenovo, ASUS, Acer,
+        Apple MacBook, MSI, Samsung and other laptop brands with genuine
+        spare parts, experienced technicians, warranty support and free
+        pickup & drop across Bangalore.
+      </p>
 
- <div className='icons row'>
-<div className='col-md-2 col-4'>
-  <img src={delllogo} alt='Dell logo' />
-</div>
-<div className='col-md-2 col-4'>
-  <img src={hplogo} alt='HP logo' />
-</div>
-<div className='col-md-2 col-4'>
-  <img src={asuslogo} alt='Asus logo' />
-</div>
-<div className='col-md-2 col-4'>
-  <img src={acerlogo} alt='Acer logo' />
-</div>
-<div className='col-md-2 col-4'>
-  <img src={microsoftlog} alt='Windows logo' />
-</div>
- </div>    
-  </div>
+      {searchQuery && (
+        <SearchResults
+          searchResults={filteredModels}
+          searchParams={searchParams}
+          ref={searchResultsRef}
+        >
+          <Products laptopModels={filteredModels} />
+        </SearchResults>
+      )}
+
+      <section className="section">
+        <div className="row">
+
+          <div className="colums">
+
+            <h2>About SkyLap Laptop Service Center</h2>
+
+            <div className="underline">
+              <span></span>
+            </div>
+
+            <p>
+              SkyLap Laptop Service Center has more than 13 years of
+              experience in laptop repair and computer services in
+              Bangalore. Our certified technicians repair Dell, HP,
+              Lenovo, ASUS, Acer, Apple MacBook, Samsung, Sony,
+              Toshiba and MSI laptops.
+
+              <br /><br />
+
+              We specialize in motherboard repair, laptop screen
+              replacement, keyboard replacement, battery replacement,
+              SSD upgrade, RAM upgrade, hinge repair, water damage
+              repair, charger replacement and data recovery.
+
+              <br /><br />
+
+              We use genuine spare parts, provide affordable pricing,
+              offer free pickup & drop and warranty on every repair.
+              More than 99% of laptops are successfully repaired by
+              our experienced engineers.
+            </p>
+
+          </div>
+
+          <div className="colums">
+
+            <h2>Why Customers Choose SkyLap</h2>
+
+            <div className="underline">
+              <span></span>
+            </div>
+
+            <div className="skills-bar">
+
+              <p>
+                Laptop Repair Success
+              </p>
+
+              <div className="progress">
+                <div
+                  className="progress-bar"
+                  style={{ width: "96%" }}
+                >
+                  96%
+                </div>
+              </div>
+
+              <p>
+                Customer Satisfaction
+              </p>
+
+              <div className="progress">
+                <div
+                  className="progress-bar"
+                  style={{ width: "98%" }}
+                >
+                  98%
+                </div>
+              </div>
+
+              <p>
+                Customer Trust
+              </p>
+
+              <div className="progress">
+                <div
+                  className="progress-bar"
+                  style={{ width: "100%" }}
+                >
+                  100%
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Brand Logos */}
+
+      <section className="icons row mt-5">
+
+        <div className="col-md-2 col-4">
+          <img
+            src={delllogo}
+            alt="Dell Laptop Service Center Bangalore"
+          />
+        </div>
+
+        <div className="col-md-2 col-4">
+          <img
+            src={hplogo}
+            alt="HP Laptop Service Center Bangalore"
+          />
+        </div>
+
+        <div className="col-md-2 col-4">
+          <img
+            src={asuslogo}
+            alt="ASUS Laptop Repair Bangalore"
+          />
+        </div>
+
+        <div className="col-md-2 col-4">
+          <img
+            src={acerlogo}
+            alt="Acer Laptop Service Center Bangalore"
+          />
+        </div>
+
+        <div className="col-md-2 col-4">
+          <img
+            src={microsoftlog}
+            alt="Windows Laptop Repair Bangalore"
+          />
+        </div>
+
+      </section>
+
+      {/* Service Locations */}
+
+      <section className="mt-5 text-center">
+
+        <h2>Our Laptop Repair Service Locations</h2>
+
+        <p>
+          {locations.map((loc, index) => (
+            <span key={loc}>
+              <span
+                style={{
+                  color: "#0d6efd",
+                  cursor: "pointer",
+                  fontWeight: "600",
+                }}
+                onClick={() =>
+                  navigate(`/laptop-service-center-in/${loc}`)
+                }
+              >
+                {loc.replace(/-/g, " ")}
+              </span>
+
+              {index !== locations.length - 1 && " | "}
+            </span>
+          ))}
+        </p>
+
+      </section>
+
     </div>
-  )
+  );
+};
+
+function isQueryMatch(model, searchQuery) {
+  const query = searchQuery.toLowerCase().trim();
+
+  const searchableText = `
+    ${model.name || ""}
+    ${model.description || ""}
+    ${model.brand || ""}
+    ${model.category || ""}
+    ${model.model || ""}
+  `
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+
+  return searchableText.includes(query);
 }
 
- function isQueryMatch(model, searchQuery) {
-      const queryWords = searchQuery.split(/\s+/); // Split the query into words
-      
-      // Check if any word in the query is present in the model's name or description
-      return queryWords.some(word =>
-        (model.name && model.name.toLowerCase().includes(word)) ||
-        (model.description && model.description.toLowerCase().includes(word))
-      );
-  }
-  
 export default Hero;

@@ -1,72 +1,104 @@
-import React, { useContext, useState } from 'react';
-import './Css/ShopCategory.css';
-import { ShopContext } from '../Context/ShopContext';
-import dropdown_icon from '../Components/Assets/dropdown_icon.png';
-import Item from '../Components/Item/Item';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import { ShopContext } from "../Context/ShopContext";
+import Item from "../Components/Item/Item";
+import { useNavigate } from "react-router-dom";
 
-const ShopCategory = (props) => {
+const ShopCategory = ({ category }) => {
   const { all_product } = useContext(ShopContext);
   const navigate = useNavigate();
 
-  // State to handle the selected sort option
-  const [selectedCategory, setSelectedCategory] = useState(props.category || 'All Categories');
+  const [selectedCategory, setSelectedCategory] = useState(
+    category || "All Categories"
+  );
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const handleRedirect = () => {
-    navigate('/products');
-  };
-
-  // Filter products based on the selected category
   const filteredProducts = all_product.filter((item) => {
-    if (selectedCategory === 'All Categories') return true; // Show all products
-    return item.category === selectedCategory; // Show products that match the selected category
+    if (selectedCategory === "All Categories") return true;
+    return item.category === selectedCategory;
   });
 
   return (
-    <div className="shop-category">
-      <img className="shop-categrory-banner" src={props.banner} alt="" />
-      <div className="shopcategory-indexshort">
-        <p>
-          <span>Showing 1-{filteredProducts.length}</span> out of {all_product.length} products
-        </p>
-        <div className="shopcategory-sort">
-          <label htmlFor="categorySort">Sort by: </label>
-          <select
-            id="categorySort"
-            value={selectedCategory}
-            onChange={(e) => handleCategoryChange(e.target.value)}
-          >
-            <option value="All Categories">All Categories</option>
-            <option value="laptop">Laptop</option>
-            <option value="keyboard">Keyboard</option>
-            <option value="battery">Battery</option>
-          </select>
-          <img src={dropdown_icon} alt="dropdown icon" />
-        </div>
-      </div>
-      <div className="shopcategory-products">
-        {filteredProducts.map((item, i) => {
-          const productImage = item.images && item.images.length > 0 ? item.images[0] : 'https://via.placeholder.com/150';
+    <div className="min-h-screen mt-24 bg-gradient-to-b from-slate-50 via-white to-slate-100 ">
 
-          return (
-            <Item
-              key={i}
-              id={item.id}
-              name={item.name}
-              image={productImage}
-              new_price={item.new_price}
-              old_price={item.old_price}
-            />
-          );
-        })}
+      
+      <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-5 px-5 md:flex-row">
+
+        <div>
+
+          <h1 className="text-3xl font-bold text-slate-800">
+            Laptop Spare Parts
+          </h1>
+
+          <p className="mt-2 text-slate-500">
+            Showing
+            <span className="mx-2 font-bold text-cyan-600">
+              {filteredProducts.length}
+            </span>
+            of
+            <span className="mx-2 font-bold">
+              {all_product.length}
+            </span>
+            Products
+          </p>
+
+        </div>
+
+        <div className="rounded-xl border border-slate-200 bg-white px-5 py-3 shadow-lg">
+
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="cursor-pointer bg-transparent text-slate-700 outline-none"
+          >
+            <option>All Categories</option>
+            <option>Battery</option>
+            <option>Screen</option>
+            <option>SSD</option>
+            <option>HDD</option>
+            <option>Keyboard</option>
+            <option>Charger</option>
+            <option>Cable</option>
+            <option>Motherboard</option>
+            <option>Cooling Fan</option>
+            <option>WiFi Card</option>
+            <option>RAM</option>
+          </select>
+
+        </div>
+
       </div>
-      <div onClick={handleRedirect} className="shopcategory-loadmore">
-        Explore More
+
+      {/* Products */}
+
+      <div className="mx-auto mt-12 grid max-w-7xl grid-cols-1 gap-8 px-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+        {filteredProducts.map((item) => (
+
+          <Item
+            key={item.id}
+            id={item.id}
+            image={item.image}
+            name={item.name}
+            brand={item.brand}
+            category={item.category}
+          />
+
+        ))}
+
       </div>
+
+      {/* CTA */}
+
+      <div className="py-20 text-center">
+
+        <button
+          onClick={() => navigate("/products")}
+          className="rounded-full bg-cyan-600 px-10 py-4 text-lg font-semibold text-white shadow-xl transition duration-300 hover:scale-105 hover:bg-cyan-500"
+        >
+          Explore More Products →
+        </button>
+
+      </div>
+
     </div>
   );
 };

@@ -38,7 +38,7 @@ const App = () => {
       <Route path='/ourservices' element={<Ourservice />} />
       <Route path='/Product' element={<Productdisplay />} />
       <Route path='/About' element={<About />} />
-      <Route path='/products' element={<ShopCategory category="laptop" />} />
+      <Route path='/products' element={<ShopCategory category="All Categories" />} />
           <Route path='/products' element={<Products />} />
           <Route path='/*' element={<Home />} />
           <Route path='/product' element={<Product/>}>
@@ -47,7 +47,7 @@ const App = () => {
           <Route path='/ShopContext' element={<ShopContext />} />
           <Route path='/battery' element={<ShopCategory category="battery" />} />
           <Route path='/keyboard' element={<ShopCategory category="keyboard" />} />
-          <Route path='/laptop' element={<ShopCategory category="laptop" />} />
+          <Route path='/RAM' element={<ShopCategory category="RAM" />} />
           <Route path='/Contact' element={<Contact />} />
     </Routes>
     <Whatsapp />

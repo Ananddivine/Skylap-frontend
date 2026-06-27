@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../Components/axiosInstance/axiosInstance"; // Importing axiosInstance
+import prodects from "../Components/Source/Prodects"
 
 export const ShopContext = createContext();
 
@@ -13,35 +14,37 @@ const getDefaultCart = () => {
 };
 
 export const ShopContextProvider = (props) => {
-  const [all_product, setAll_Product] = useState([]);
+  // const [all_product, setAll_Product] = useState([]);
   const [cartItems, setCartItems] = useState(getDefaultCart());
   const [cartTotal, setCartTotal] = useState(getDefaultCart());
   const navigate = useNavigate();
   const baseURL = process.env.REACT_APP_API_BASE_URL; // Using the base URL from the environment variable
 
-  useEffect(() => {
-    // Fetch all products using axiosInstance
-    axiosInstance.get(`${baseURL}/api/products`)  
-      .then((response) => {
-        console.log('Fetched products:', response.data);
-        setAll_Product(response.data);
-      })
-      .catch((error) => console.error('Error fetching products:', error));
+  // useEffect(() => {
+  //   // Fetch all products using axiosInstance
+  //   axiosInstance.get(`${baseURL}/api/products`)  
+  //     .then((response) => {
+  //       console.log('Fetched products:', response.data);
+  //       setAll_Product(response.data);
+  //     })
+  //     .catch((error) => console.error('Error fetching products:', error));
 
-    // Fetch cart items if the user is authenticated
-    if (localStorage.getItem('auth-token')) {
-      axiosInstance.post(`${baseURL}/api/users/getcart`, {}, {
-        headers: {
-          'auth-token': `${localStorage.getItem('auth-token')}`,
-        },
-      })
-        .then((response) => {
-          setCartItems(response.data);
-          setCartTotal(response.data);
-        })
-        .catch((error) => console.error('Error fetching cart items:', error));
-    }
-  }, [baseURL]);
+  //   // Fetch cart items if the user is authenticated
+  //   if (localStorage.getItem('auth-token')) {
+  //     axiosInstance.post(`${baseURL}/api/users/getcart`, {}, {
+  //       headers: {
+  //         'auth-token': `${localStorage.getItem('auth-token')}`,
+  //       },
+  //     })
+  //       .then((response) => {
+  //         setCartItems(response.data);
+  //         setCartTotal(response.data);
+  //       })
+  //       .catch((error) => console.error('Error fetching cart items:', error));
+  //   }
+  // }, [baseURL]);
+
+ const [all_product] = useState(prodects);
 
   const addToCart = async (itemId) => {
     const token = localStorage.getItem('auth-token'); // Retrieve JWT

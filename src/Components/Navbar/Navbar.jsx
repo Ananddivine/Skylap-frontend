@@ -3,7 +3,6 @@ import { NavLink, useNavigate, useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCartArrowDown, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import logos from "../Assets/Logolapy.png";
-import './Navbar.css';
 import { ShopContext } from "../../Context/ShopContext";
 
 function Navigation() {
@@ -109,109 +108,225 @@ function Navigation() {
         };
     }, []);
 
-    return (
-        <section id="nav-bar" ref={navbarRef}>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
-                <NavLink to="/">
-                    <div className="logo">
-                        <img src={logos} alt="Logo" style={{ width: '180px', height: '70px' }}  />
-                    </div>
-                </NavLink>
-                <div className="user">
-                    <p style={{ fontWeight: 800, marginLeft: '30px', cursor: 'pointer'}} id="username-display" onClick={handleWelcomeClick}>
-                        {username ? (
-                            <NavLink className="navlinks" to="/welcome" onClick={handleLinkClick}>{`Hi ${username}`}</NavLink>
-                        ) : (
-                            <NavLink to="/welcome">{`${username || ''}`}</NavLink>
-                        )}
-                    </p>
-                </div>
-                <div className="notification-container">
-                    {username && (
-                        <div className={`notification-icon ${hasNewNotification ? 'new-notification' : ''}`} onClick={handleNotificationClick}>
-                            <FontAwesomeIcon className="iconss" icon={faBell} />
-                        </div>
-                    )}
-                </div>
+  return (
+  <header
+    ref={navbarRef}
+    className="fixed top-0 left-0 z-50 w-full bg-[#0e1015] shadow-lg"
+  >
+    <nav className="mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
 
-
-                                {username && (
-                        <div className="nav-cart">
-                            <div className="nav-cart-count">{getTotalCartItems()}</div>
-                            <NavLink to="/cart">
-                                <FontAwesomeIcon className="cart-icon" icon={faCartArrowDown} />
-                            </NavLink>
-
-                            <div className="orders group relative">
-                                <NavLink to='/orders'>
-                                      <FontAwesomeIcon className="truck-icon" icon={faTruckFast} />
-                                    {/* Tooltip */}
-                                    <span className="tooltip-text">My Orders</span>
-                                </NavLink>
-                            </div>
-
-                        </div>
-
-                        
-                    )}
-
-                        
-
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    onClick={handleNavbarToggle}
-                >
-                    <span className="navbar-toggler-icon"><i className="fa fa-2x fa-bars" aria-hidden="true"></i></span>
-                </button>
-                
-                <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarSupportedContent">
-  <ul className="navbar-nav ml-auto">
-    <li className="nav-item">
-      <NavLink className="nav-link" to="/" onClick={handleLinkClick}>HOME</NavLink>
-    </li>
-    <li className="nav-item">
-      <NavLink className="nav-link" to="/Products" onClick={handleLinkClick}>PRODUCTS</NavLink>
-    </li>
-    <li className="nav-item">
-      <NavLink className="nav-link" to="/About" onClick={handleLinkClick}>ABOUT US</NavLink>
-    </li>
-    <li className="nav-item dropdown" onMouseEnter={handleDropdownHover} onMouseLeave={handleDropdownLeave}>
-      <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded={showDropdown}>
-        SERVICES
+      {/* Logo */}
+      <NavLink to="/" onClick={handleLinkClick}>
+        <img
+          src={logos}
+          alt="SkyLap Logo"
+          className="h-16 w-auto brightness-0 invert"
+        />
       </NavLink>
-      <div className={`dropdown-menu ${showDropdown ? 'show' : ''}`} aria-labelledby="navbarDropdown">
-        <NavLink className="dropdown-item" to="/Services" onClick={handleLinkClick}>Services</NavLink>
-        <div className="dropdown-divider"></div>
-        {localStorage.getItem('auth-token') 
-          ? <button onClick={handelLogOut}>Log Out</button> 
-          : <Link className="dropdown-item" to="/Login" onClick={handleLinkClick}>Login</Link>}
-        <NavLink className="dropdown-item" to="/Register" onClick={handleLinkClick}>Register</NavLink>
+
+      {/* Right Side */}
+      <div className="flex items-center gap-4">
+
+        {/* Username */}
+        {username && (
+          <button
+            onClick={handleWelcomeClick}
+            className="hidden md:block font-bold text-white hover:text-cyan-400"
+          >
+            Hi {username}
+          </button>
+        )}
+
+        {/* Notification */}
+        {username && (
+          <button
+            onClick={handleNotificationClick}
+            className="relative text-white hover:text-red-500"
+          >
+            <FontAwesomeIcon
+              icon={faBell}
+              className={`text-xl ${
+                hasNewNotification ? "animate-pulse text-red-500" : ""
+              }`}
+            />
+          </button>
+        )}
+
+        {/* Cart */}
+        {username && (
+          <NavLink
+            to="/cart"
+            className="relative text-white hover:text-cyan-400"
+          >
+            <FontAwesomeIcon
+              icon={faCartArrowDown}
+              className="text-2xl"
+            />
+
+            <span className="absolute -top-2 -right-2 rounded-full bg-red-600 px-1 text-[10px] text-white">
+              {getTotalCartItems()}
+            </span>
+          </NavLink>
+        )}
+
+        {/* Orders */}
+        {username && (
+          <div className="group relative">
+            <NavLink
+              to="/orders"
+              className="text-green-500"
+            >
+              <FontAwesomeIcon
+                icon={faTruckFast}
+                className="text-2xl"
+              />
+            </NavLink>
+
+            <span className="absolute left-1/2 top-10 hidden -translate-x-1/2 rounded bg-gray-800 px-2 py-1 text-xs text-white group-hover:block">
+              My Orders
+            </span>
+          </div>
+        )}
+
+        {/* Mobile Button */}
+        <button
+          onClick={handleNavbarToggle}
+          className="text-white lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            {isNavbarOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
       </div>
-    </li>
-    <li className="nav-item">
-      <NavLink className="nav-link" to="/Contact" onClick={handleLinkClick}>CONTACT US</NavLink>
-    </li>
-    <li className="nav-item">
-      {location.pathname !== '/searchitemsdisplay' && (
-        <form className="form-inline my-2 my-lg-0">
+
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex lg:items-center lg:gap-6 ">
+
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `text-sm font-medium no-underline ${
+              isActive
+                ? "text-blue-400"
+                : "text-white hover:text-cyan-400"
+            }`
+          }
+        >
+          HOME
+        </NavLink>
+
+        <NavLink
+          to="/Products"
+          className={({ isActive }) =>
+            `text-sm font-medium no-underline ${
+              isActive
+                ? "text-blue-400"
+                : "text-white hover:text-cyan-400"
+            }`
+          }
+        >
+          PRODUCTS
+        </NavLink>
+
+        <NavLink
+          to="/About"
+          className={({ isActive }) =>
+            `text-sm font-medium no-underline ${
+              isActive
+                ? "text-blue-400"
+                : "text-white hover:text-cyan-400"
+            }`
+          }
+        >
+          ABOUT
+        </NavLink>
+
+        <NavLink
+          to="/Contact"
+          className={({ isActive }) =>
+            `text-sm font-medium no-underline ${
+              isActive
+                ? "text-blue-400"
+                : "text-white hover:text-cyan-400"
+            }`
+          }
+        >
+          CONTACT
+        </NavLink>
+
+        {location.pathname !== "/searchitemsdisplay" && (
           <input
-            className="form-control mr-sm-2 search"
-            name="search_bar"
             type="search"
-            placeholder="&#128269;Search the laptop models & Products"
-            aria-label="Search"
+            placeholder="🔍 Search laptop models..."
             onClick={handlePlaceholderClick}
+            className="rounded-lg border border-gray-700 bg-[#232427] px-3 py-2 text-sm text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none"
           />
-        </form>
-      )}
-    </li>
-  </ul>
-</div>
+        )}
 
-            </nav>
-        </section>
-    );
+      </div>
+    </nav>
+
+    {/* Mobile Menu */}
+    {isNavbarOpen && (
+      <div className="bg-[#0e1015] px-6 pb-5 lg:hidden">
+
+        <NavLink
+          to="/"
+          onClick={handleLinkClick}
+          className="block py-3 text-white hover:text-cyan-400"
+        >
+          HOME
+        </NavLink>
+
+        <NavLink
+          to="/Products"
+          onClick={handleLinkClick}
+          className="block py-3 text-white hover:text-cyan-400"
+        >
+          PRODUCTS
+        </NavLink>
+
+        <NavLink
+          to="/About"
+          onClick={handleLinkClick}
+          className="block py-3 text-white hover:text-cyan-400"
+        >
+          ABOUT
+        </NavLink>
+
+        <NavLink
+          to="/Contact"
+          onClick={handleLinkClick}
+          className="block py-3 text-white hover:text-cyan-400"
+        >
+          CONTACT
+        </NavLink>
+
+      </div>
+    )}
+
+  </header>
+);
 }
-
 export default Navigation;

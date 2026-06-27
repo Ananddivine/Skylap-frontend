@@ -29,13 +29,17 @@ const SearchiItemDisplay = () => {
   const handleSuggestionClick = (suggestion) => {
     setSearchTerm(`${suggestion.name} ${suggestion.description}`);
     setSuggestions([]);
-    navigate(`/search?search=${suggestion.name}`);
+    navigate(
+  `/search?search=${encodeURIComponent(
+    `${suggestion.name} ${suggestion.description}`
+  )}`
+);
   };
 
   // Navigate to the search results page on form submission
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    navigate(`/search?search=${searchTerm}`);
+  navigate(`/search?search=${encodeURIComponent(searchTerm)}`);
   };
 
   return (

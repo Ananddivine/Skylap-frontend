@@ -21,7 +21,7 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h1 className="contact-title">Contact Us</h1>
+      <h1 className="contact-title mt-14">Contact Us</h1>
 
       <div className="contact-wrapper">
         {/* Contact Details */}

@@ -162,10 +162,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* WhatsApp Link */}
-      <a href="https://wa.me/+919606120007" className="whatsApp" target="_blank" rel="noopener noreferrer">
-        <i className="fa fa-whatsapp my-whatsApp"></i>
-      </a>
+  
     </div>
   );
 };
