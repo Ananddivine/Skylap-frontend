@@ -22,7 +22,7 @@ import screen14 from "../Assets/Screens/14-inch-fhd.png";
 import screen156 from "../Assets/Screens/15.6-inch-fhd.png";
 
 
-export default [
+const products = [
   {
     "id": 1,
     "category": "Battery",
@@ -401,3 +401,5 @@ export default [
   price: "Contact for Price"
 }
 ]
+
+export default products;

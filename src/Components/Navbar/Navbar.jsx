@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { NavLink, useNavigate, useLocation, Link } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCartArrowDown, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import logos from "../Assets/Logolapy.png";
 import { ShopContext } from "../../Context/ShopContext";
 
 function Navigation() {
-    const [showDropdown, setDropdown] = useState(false);
+   
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const location = useLocation();
@@ -23,13 +23,8 @@ function Navigation() {
         setNavbarOpen(false);
     };
 
-    const handleDropdownHover = () => {
-        setDropdown(true);
-    };
+ 
 
-    const handleDropdownLeave = () => {
-        setDropdown(false);
-    };
 
     const handleWelcomeClick = () => {
         navigate("/welcome");
@@ -88,13 +83,7 @@ function Navigation() {
     const handlePlaceholderClick = () => {
         navigate('/searchitemsdisplay');
     };
-    const handelLogOut = () => {
-        localStorage.removeItem('username');
-        localStorage.removeItem('auth-token');
-        localStorage.removeItem('user-email');
-        localStorage.removeItem('userId')
-        window.location.reload(); // This will refresh the page
-    };
+
     const handleClickOutside = (event) => {
         if (navbarRef.current && !navbarRef.current.contains(event.target)) {
             setNavbarOpen(false);

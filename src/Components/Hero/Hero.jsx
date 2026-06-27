@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import SearchResults from "../SearchResults/SearchResults";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 
@@ -13,7 +13,7 @@ import { ShopContext } from '../../Context/ShopContext';
 import "./Hero.css";
 
 import Products from "../../Pages/Products";
-import axiosInstance from "../axiosInstance/axiosInstance";
+
 
 const Hero = () => {
   const locationObj = useLocation();
@@ -34,18 +34,7 @@ const searchQuery = decodeURIComponent(
 
 const laptopModels = all_product;
 
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await axiosInstance.get("/api/products");
-  //       setLaptopModels(response.data);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
 
-  //   fetchProducts();
-  // }, []);
 
   const filteredModels = searchQuery
     ? laptopModels.filter((model) =>
