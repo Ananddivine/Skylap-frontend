@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer-column">
           <h2>Contact Us</h2>
           <ul>
-            <li><a href="tel:+9606120007">Call: 9606120007</a></li>
+            <li><a href="tel:+919606120007">Call: 9606120007</a></li>
             <li><a href="https://g.page/Skylap?share" target="_blank" rel="noopener noreferrer">Location</a></li>
             <li><a href="mailto:skylapwhitefield@gmail.com">Mail Us</a></li>
             <li><a href="https://wa.me/+919606120007" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
