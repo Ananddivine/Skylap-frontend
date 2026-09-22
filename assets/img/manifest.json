@@ -1,0 +1,282 @@
+[
+  {
+    "file": "logo-microsoftlogo-27d7dcd5af7fde50acc4.webp",
+    "kind": "brand-logo",
+    "alt": "Windows Laptop Repair Bangalore",
+    "brand": null,
+    "w": 200,
+    "h": 163,
+    "kb": 2.5,
+    "from": "microsoftlogo.27d7dcd5af7fde50acc4.png"
+  },
+  {
+    "file": "logo-acer.webp",
+    "kind": "brand-logo",
+    "alt": "Acer Laptop Service Center Bangalore",
+    "brand": "ACER",
+    "w": 200,
+    "h": 200,
+    "kb": 4.1,
+    "from": "acerlogo.2c1f384fade3a59615b7.jpg"
+  },
+  {
+    "file": "logo-asus.webp",
+    "kind": "brand-logo",
+    "alt": "ASUS Laptop Repair Bangalore",
+    "brand": "ASUS",
+    "w": 200,
+    "h": 200,
+    "kb": 2.6,
+    "from": "inline-07.png"
+  },
+  {
+    "file": "logo-hp.webp",
+    "kind": "brand-logo",
+    "alt": "HP Laptop Service Center Bangalore",
+    "brand": "HP",
+    "w": 200,
+    "h": 200,
+    "kb": 4.3,
+    "from": "hplogo.067cffd621e394358a8f.png"
+  },
+  {
+    "file": "logo-dell.webp",
+    "kind": "brand-logo",
+    "alt": "Dell Laptop Service Center Bangalore",
+    "brand": "DELL",
+    "w": 200,
+    "h": 200,
+    "kb": 8.2,
+    "from": "delllogo.fad9b4eca386926c8a99.png"
+  },
+  {
+    "file": "part-15-6-inch-full-hd-laptop-screen.webp",
+    "kind": "product-photo",
+    "alt": "15.6 Inch Full HD Laptop Screen",
+    "brand": null,
+    "w": 225,
+    "h": 180,
+    "kb": 10.0,
+    "from": "inline-43.png"
+  },
+  {
+    "file": "part-14-inch-full-hd-laptop-screen.webp",
+    "kind": "product-photo",
+    "alt": "14 Inch Full HD Laptop Screen",
+    "brand": null,
+    "w": 250,
+    "h": 200,
+    "kb": 6.5,
+    "from": "inline-42.png"
+  },
+  {
+    "file": "part-intel-ax210-wifi-6e-wireless-card.webp",
+    "kind": "product-photo",
+    "alt": "Intel AX210 WiFi 6E Wireless Card",
+    "brand": null,
+    "w": 480,
+    "h": 484,
+    "kb": 25.1,
+    "from": "intel-ax210-wifi6e.f84fd7fa333fda4e23d5.jpg"
+  },
+  {
+    "file": "part-hp-15-series-laptop-hinge-pair.webp",
+    "kind": "product-photo",
+    "alt": "HP 15 Series Laptop Hinge Pair",
+    "brand": "HP",
+    "w": 416,
+    "h": 416,
+    "kb": 8.1,
+    "from": "inline-40.jpg"
+  },
+  {
+    "file": "part-dell-inspiron-laptop-cooling-fan.webp",
+    "kind": "product-photo",
+    "alt": "Dell Inspiron Laptop Cooling Fan",
+    "brand": "DELL",
+    "w": 316,
+    "h": 316,
+    "kb": 13.0,
+    "from": "dell-inspiron-fan.f169c0135dc9cace2394.jpg"
+  },
+  {
+    "file": "part-crucial-8gb-ddr4-3200mhz-ram.webp",
+    "kind": "product-photo",
+    "alt": "Crucial 8GB DDR4 3200MHz RAM",
+    "brand": null,
+    "w": 316,
+    "h": 316,
+    "kb": 8.2,
+    "from": "inline-38.jpg"
+  },
+  {
+    "file": "part-intel-core-i5-11th-gen-laptop-motherboard.webp",
+    "kind": "product-photo",
+    "alt": "Intel Core i5 11th Gen Laptop Motherboard",
+    "brand": null,
+    "w": 480,
+    "h": 480,
+    "kb": 13.1,
+    "from": "core-i5-11th-gen-board.406acd3f9dfbbd471937.jpg"
+  },
+  {
+    "file": "part-lenovo-laptop-keyboard.webp",
+    "kind": "product-photo",
+    "alt": "Lenovo Laptop Keyboard",
+    "brand": "LENOVO",
+    "w": 225,
+    "h": 180,
+    "kb": 7.6,
+    "from": "inline-36.png"
+  },
+  {
+    "file": "part-hp-laptop-keyboard.webp",
+    "kind": "product-photo",
+    "alt": "HP Laptop Keyboard",
+    "brand": "HP",
+    "w": 250,
+    "h": 200,
+    "kb": 7.3,
+    "from": "inline-35.png"
+  },
+  {
+    "file": "part-dell-laptop-keyboard.webp",
+    "kind": "product-photo",
+    "alt": "Dell Laptop Keyboard",
+    "brand": "DELL",
+    "w": 224,
+    "h": 179,
+    "kb": 8.1,
+    "from": "inline-34.png"
+  },
+  {
+    "file": "part-wd-blue-1tb-hdd.webp",
+    "kind": "product-photo",
+    "alt": "WD Blue 1TB HDD",
+    "brand": null,
+    "w": 250,
+    "h": 200,
+    "kb": 4.9,
+    "from": "inline-33.png"
+  },
+  {
+    "file": "part-seagate-1tb-hdd.webp",
+    "kind": "product-photo",
+    "alt": "Seagate 1TB HDD",
+    "brand": null,
+    "w": 250,
+    "h": 200,
+    "kb": 7.6,
+    "from": "inline-32.png"
+  },
+  {
+    "file": "part-lenovo-usb-c-charger.webp",
+    "kind": "product-photo",
+    "alt": "Lenovo USB-C Charger",
+    "brand": "LENOVO",
+    "w": 250,
+    "h": 200,
+    "kb": 4.2,
+    "from": "inline-31.png"
+  },
+  {
+    "file": "part-hp-65w-laptop-charger.webp",
+    "kind": "product-photo",
+    "alt": "HP 65W Laptop Charger",
+    "brand": "HP",
+    "w": 250,
+    "h": 200,
+    "kb": 5.1,
+    "from": "inline-30.png"
+  },
+  {
+    "file": "part-dell-65w-laptop-charger.webp",
+    "kind": "product-photo",
+    "alt": "Dell 65W Laptop Charger",
+    "brand": "DELL",
+    "w": 250,
+    "h": 200,
+    "kb": 4.3,
+    "from": "inline-29.png"
+  },
+  {
+    "file": "part-sata-hdd-cable.webp",
+    "kind": "product-photo",
+    "alt": "SATA HDD Cable",
+    "brand": null,
+    "w": 250,
+    "h": 200,
+    "kb": 3.5,
+    "from": "inline-28.png"
+  },
+  {
+    "file": "part-30-pin-edp-display-cable.webp",
+    "kind": "product-photo",
+    "alt": "30 Pin eDP Display Cable",
+    "brand": null,
+    "w": 250,
+    "h": 200,
+    "kb": 4.4,
+    "from": "inline-27.png"
+  },
+  {
+    "file": "part-lenovo-laptop-battery.webp",
+    "kind": "product-photo",
+    "alt": "Lenovo Laptop Battery",
+    "brand": "LENOVO",
+    "w": 250,
+    "h": 200,
+    "kb": 12.4,
+    "from": "lenovo-battery.e61bd4e5adf7f1dee23f.png"
+  },
+  {
+    "file": "part-hp-laptop-battery.webp",
+    "kind": "product-photo",
+    "alt": "HP Laptop Battery",
+    "brand": "HP",
+    "w": 250,
+    "h": 200,
+    "kb": 5.3,
+    "from": "inline-25.png"
+  },
+  {
+    "file": "part-dell-laptop-battery.webp",
+    "kind": "product-photo",
+    "alt": "Dell Laptop Battery",
+    "brand": "DELL",
+    "w": 250,
+    "h": 200,
+    "kb": 14.9,
+    "from": "dell-battery.7040a72c7429b9488f6d.png"
+  },
+  {
+    "file": "part-asus-laptop-battery.webp",
+    "kind": "product-photo",
+    "alt": "ASUS Laptop Battery",
+    "brand": "ASUS",
+    "w": 250,
+    "h": 200,
+    "kb": 5.0,
+    "from": "inline-23.png"
+  },
+  {
+    "file": "part-acer-laptop-battery.webp",
+    "kind": "product-photo",
+    "alt": "Acer Laptop Battery",
+    "brand": "ACER",
+    "w": 250,
+    "h": 200,
+    "kb": 4.9,
+    "from": "inline-22.png"
+  },
+  {
+    "file": "skylap-logo.webp",
+    "kind": "skylap-logo",
+    "alt": "SkyLap Logo",
+    "brand": null,
+    "w": 480,
+    "h": 162,
+    "kb": 14.4,
+    "from": "Logolapy.c4b3b33104c223740348.png"
+  }
+]
