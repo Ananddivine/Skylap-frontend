@@ -163,3 +163,20 @@
     }));
   });
 })();
+
+/* Light / dark switch. The first press flips away from whatever is showing now, which with nothing
+   stored is the device setting; the choice is remembered on this device only. */
+(() => {
+  const btn = document.querySelector('[data-theme-toggle]');
+  if (!btn) return;
+  const root = document.documentElement;
+  const showing = () => root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const label = () => btn.setAttribute('aria-label', showing() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  label();
+  btn.addEventListener('click', () => {
+    const next = showing() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) { /* private mode: still switches for this page */ }
+    label();
+  });
+})();

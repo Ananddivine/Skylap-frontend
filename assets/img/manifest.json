@@ -54,9 +54,9 @@
     "kind": "product-photo",
     "alt": "15.6 Inch Full HD Laptop Screen",
     "brand": null,
-    "w": 225,
-    "h": 180,
-    "kb": 10.0,
+    "w": 900,
+    "h": 720,
+    "kb": 33.3,
     "from": "inline-43.png"
   },
   {
@@ -64,9 +64,9 @@
     "kind": "product-photo",
     "alt": "14 Inch Full HD Laptop Screen",
     "brand": null,
-    "w": 250,
-    "h": 200,
-    "kb": 6.5,
+    "w": 900,
+    "h": 720,
+    "kb": 21.9,
     "from": "inline-42.png"
   },
   {
@@ -74,9 +74,9 @@
     "kind": "product-photo",
     "alt": "Intel AX210 WiFi 6E Wireless Card",
     "brand": null,
-    "w": 480,
-    "h": 484,
-    "kb": 25.1,
+    "w": 892,
+    "h": 900,
+    "kb": 52.0,
     "from": "intel-ax210-wifi6e.f84fd7fa333fda4e23d5.jpg"
   },
   {
@@ -84,9 +84,9 @@
     "kind": "product-photo",
     "alt": "HP 15 Series Laptop Hinge Pair",
     "brand": "HP",
-    "w": 416,
-    "h": 416,
-    "kb": 8.1,
+    "w": 900,
+    "h": 900,
+    "kb": 19.2,
     "from": "inline-40.jpg"
   },
   {
@@ -94,9 +94,9 @@
     "kind": "product-photo",
     "alt": "Dell Inspiron Laptop Cooling Fan",
     "brand": "DELL",
-    "w": 316,
-    "h": 316,
-    "kb": 13.0,
+    "w": 900,
+    "h": 900,
+    "kb": 35.9,
     "from": "dell-inspiron-fan.f169c0135dc9cace2394.jpg"
   },
   {
@@ -104,9 +104,9 @@
     "kind": "product-photo",
     "alt": "Crucial 8GB DDR4 3200MHz RAM",
     "brand": null,
-    "w": 316,
-    "h": 316,
-    "kb": 8.2,
+    "w": 900,
+    "h": 900,
+    "kb": 35.6,
     "from": "inline-38.jpg"
   },
   {
@@ -114,9 +114,9 @@
     "kind": "product-photo",
     "alt": "Intel Core i5 11th Gen Laptop Motherboard",
     "brand": null,
-    "w": 480,
-    "h": 480,
-    "kb": 13.1,
+    "w": 900,
+    "h": 900,
+    "kb": 32.3,
     "from": "core-i5-11th-gen-board.406acd3f9dfbbd471937.jpg"
   },
   {
@@ -124,9 +124,9 @@
     "kind": "product-photo",
     "alt": "Lenovo Laptop Keyboard",
     "brand": "LENOVO",
-    "w": 225,
-    "h": 180,
-    "kb": 7.6,
+    "w": 900,
+    "h": 720,
+    "kb": 30.4,
     "from": "inline-36.png"
   },
   {
@@ -134,9 +134,9 @@
     "kind": "product-photo",
     "alt": "HP Laptop Keyboard",
     "brand": "HP",
-    "w": 250,
-    "h": 200,
-    "kb": 7.3,
+    "w": 900,
+    "h": 720,
+    "kb": 23.5,
     "from": "inline-35.png"
   },
   {
@@ -144,9 +144,9 @@
     "kind": "product-photo",
     "alt": "Dell Laptop Keyboard",
     "brand": "DELL",
-    "w": 224,
-    "h": 179,
-    "kb": 8.1,
+    "w": 896,
+    "h": 716,
+    "kb": 36.3,
     "from": "inline-34.png"
   },
   {
@@ -154,9 +154,9 @@
     "kind": "product-photo",
     "alt": "WD Blue 1TB HDD",
     "brand": null,
-    "w": 250,
-    "h": 200,
-    "kb": 4.9,
+    "w": 900,
+    "h": 720,
+    "kb": 17.5,
     "from": "inline-33.png"
   },
   {
@@ -164,9 +164,9 @@
     "kind": "product-photo",
     "alt": "Seagate 1TB HDD",
     "brand": null,
-    "w": 250,
-    "h": 200,
-    "kb": 7.6,
+    "w": 900,
+    "h": 720,
+    "kb": 32.3,
     "from": "inline-32.png"
   },
   {
@@ -174,9 +174,9 @@
     "kind": "product-photo",
     "alt": "Lenovo USB-C Charger",
     "brand": "LENOVO",
-    "w": 250,
-    "h": 200,
-    "kb": 4.2,
+    "w": 900,
+    "h": 720,
+    "kb": 17.0,
     "from": "inline-31.png"
   },
   {
@@ -184,9 +184,9 @@
     "kind": "product-photo",
     "alt": "HP 65W Laptop Charger",
     "brand": "HP",
-    "w": 250,
-    "h": 200,
-    "kb": 5.1,
+    "w": 900,
+    "h": 720,
+    "kb": 19.3,
     "from": "inline-30.png"
   },
   {
@@ -194,9 +194,9 @@
     "kind": "product-photo",
     "alt": "Dell 65W Laptop Charger",
     "brand": "DELL",
-    "w": 250,
-    "h": 200,
-    "kb": 4.3,
+    "w": 900,
+    "h": 720,
+    "kb": 18.0,
     "from": "inline-29.png"
   },
   {
@@ -204,9 +204,9 @@
     "kind": "product-photo",
     "alt": "SATA HDD Cable",
     "brand": null,
-    "w": 250,
-    "h": 200,
-    "kb": 3.5,
+    "w": 900,
+    "h": 720,
+    "kb": 11.9,
     "from": "inline-28.png"
   },
   {
@@ -214,9 +214,9 @@
     "kind": "product-photo",
     "alt": "30 Pin eDP Display Cable",
     "brand": null,
-    "w": 250,
-    "h": 200,
-    "kb": 4.4,
+    "w": 900,
+    "h": 720,
+    "kb": 17.7,
     "from": "inline-27.png"
   },
   {
@@ -224,9 +224,9 @@
     "kind": "product-photo",
     "alt": "Lenovo Laptop Battery",
     "brand": "LENOVO",
-    "w": 250,
-    "h": 200,
-    "kb": 12.4,
+    "w": 900,
+    "h": 720,
+    "kb": 38.0,
     "from": "lenovo-battery.e61bd4e5adf7f1dee23f.png"
   },
   {
@@ -234,9 +234,9 @@
     "kind": "product-photo",
     "alt": "HP Laptop Battery",
     "brand": "HP",
-    "w": 250,
-    "h": 200,
-    "kb": 5.3,
+    "w": 900,
+    "h": 720,
+    "kb": 21.6,
     "from": "inline-25.png"
   },
   {
@@ -244,9 +244,9 @@
     "kind": "product-photo",
     "alt": "Dell Laptop Battery",
     "brand": "DELL",
-    "w": 250,
-    "h": 200,
-    "kb": 14.9,
+    "w": 900,
+    "h": 720,
+    "kb": 59.6,
     "from": "dell-battery.7040a72c7429b9488f6d.png"
   },
   {
@@ -254,9 +254,9 @@
     "kind": "product-photo",
     "alt": "ASUS Laptop Battery",
     "brand": "ASUS",
-    "w": 250,
-    "h": 200,
-    "kb": 5.0,
+    "w": 900,
+    "h": 720,
+    "kb": 17.1,
     "from": "inline-23.png"
   },
   {
@@ -264,9 +264,9 @@
     "kind": "product-photo",
     "alt": "Acer Laptop Battery",
     "brand": "ACER",
-    "w": 250,
-    "h": 200,
-    "kb": 4.9,
+    "w": 900,
+    "h": 720,
+    "kb": 23.8,
     "from": "inline-22.png"
   },
   {
