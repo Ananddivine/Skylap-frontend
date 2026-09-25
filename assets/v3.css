@@ -764,8 +764,10 @@ section { padding: clamp(44px, 5vw, 78px) 0; }
    into the same frame when the workshop supplies one. */
 .hero-board .h-grid { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr); align-items: center; }
 @media (min-width: 1024px) { .hero-board .h-grid { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 52px; } }
-.hero-board h1 { font-size: clamp(31px, 3.9vw, 54px); letter-spacing: -.03em; line-height: 1.07; max-width: 19ch; margin-bottom: 26px; }
-.hero-board h1 em { font-style: normal; text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: .085em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
+/* the H1 carries the search terms; the big line is the visual headline */
+.hero-board h1.h1-kw { font-size: 13px; line-height: 1.4; letter-spacing: .08em; margin: 0 0 14px; }
+.hero-board .hero-display { margin: 0 0 26px; font-weight: 500; text-wrap: balance; font-size: clamp(31px, 3.9vw, 54px); letter-spacing: -.03em; line-height: 1.07; max-width: 19ch; margin-bottom: 26px; }
+.hero-board .hero-display em { font-style: normal; text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: .085em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
 .hero-board .said { display: grid; gap: 10px; margin-bottom: 18px; padding-left: 16px; border-left: 3px solid var(--line-2); }
 .hero-board .said p { font-size: 16.5px; line-height: 1.5; color: var(--ink-2); font-style: italic; margin: 0; }
 .hero-board .said cite { font-style: normal; font-size: 13.5px; color: var(--ink-3); }
