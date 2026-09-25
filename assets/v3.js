@@ -88,7 +88,7 @@
      them. The destination address lives only inside that script, never here, so no email address
      appears anywhere in this site. Until the URL is pasted in, the form validates and points
      people at the phone instead of pretending to send. */
-  const ENQUIRY_ENDPOINT = '';
+  const ENQUIRY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbpfD_CeHhFDdOOZnypLL4m3fZXnRdBWJi9Iyd90gerbqnMD7ZlOztltvUFiW0c7wa9A/exec';
 
   const qf = document.getElementById('qf');
   if (qf) qf.addEventListener('submit', async (e) => {
@@ -101,15 +101,32 @@
       qf.reportValidity();
       return;
     }
-    if (!ENQUIRY_ENDPOINT) {
-      note.className = 'qf-note is-error';
-      note.textContent = 'This form is not connected yet. Please call 96061 20007 or send a photo on WhatsApp and we will pick it up straight away.';
-      return;
-    }
-
     const data = Object.fromEntries(new FormData(qf).entries());
     data.page = location.pathname;
     data.source = 'website';
+
+    if (!ENQUIRY_ENDPOINT) {
+      /* No sheet to write to yet, so the enquiry goes where this workshop already works: WhatsApp,
+         with everything the customer typed carried across. A form that silently goes nowhere loses
+         the lead entirely, and telling someone to start again in another app usually loses them too.
+         The moment ENQUIRY_ENDPOINT is filled in, this path is skipped and enquiries post to the
+         sheet instead — nothing here needs changing again. */
+      const issueLabel = (qf.querySelector('#qf-issue')?.selectedOptions?.[0]?.textContent || data.issue || '').trim();
+      const lines = [
+        'Hi SkyLap, I would like a repair quote.',
+        '',
+        `Name: ${data.name || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Problem: ${issueLabel}`,
+      ];
+      if ((data.message || '').trim()) lines.push(`Details: ${data.message.trim()}`);
+      lines.push('', `Sent from ${location.pathname}`);
+      const wa = `https://wa.me/919606120007?text=${encodeURIComponent(lines.join('\n'))}`;
+      note.className = 'qf-note is-ok';
+      note.textContent = 'Opening WhatsApp with your details filled in. Press send there and we will call you back. Not using WhatsApp? Call 96061 20007.';
+      window.open(wa, '_blank', 'noopener');
+      return;
+    }
 
     const label = btn ? btn.textContent : '';
     if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
