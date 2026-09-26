@@ -54,8 +54,8 @@
   /* ── 2. section headings and their intro copy rise as they come into view ─────────── */
   gsap.utils.toArray('.sec-head, .chapter-text, .answer-sec .prose > h2, .rel-sec h2').forEach((el) => {
     gsap.from(el.children.length ? el.children : el, {
-      y: 30, opacity: 0, duration: 1, ease: EASE, stagger: .08,
-      scrollTrigger: { trigger: el, start: 'top 86%', once: true },
+      y: 24, opacity: 0, duration: .75, ease: EASE, stagger: .06,
+      scrollTrigger: { trigger: el, start: 'top 94%', once: true },
       clearProps: 'transform,opacity', // leave nothing behind: an offset left over once stuck the picker 36px low
     });
   });
@@ -78,10 +78,10 @@
       const items = g.querySelectorAll(`:scope > ${item.split(', ').join(', :scope > ')}`);
       if (!items.length) return;
       gsap.from(items, {
-        y: 36, opacity: 0, duration: .9, ease: EASE,
+        y: 28, opacity: 0, duration: .7, ease: EASE,
         // cap the whole cascade near 0.8s: 120 review cards at .07s each took 8s to finish appearing
-        stagger: { each: Math.min(.07, .8 / items.length), from: 'start' },
-        scrollTrigger: { trigger: g, start: 'top 88%', once: true },
+        stagger: { each: Math.min(.06, .5 / items.length), from: 'start' },
+        scrollTrigger: { trigger: g, start: 'top 95%', once: true },
       clearProps: 'transform,opacity', // leave nothing behind: an offset left over once stuck the picker 36px low
       });
     });
@@ -90,8 +90,8 @@
   /* ── 4. photographs settle in with a slow scale, the way a camera finds focus ─────── */
   gsap.utils.toArray('.chapter-photo, .part-photo, .map-card').forEach((el) => {
     gsap.from(el, {
-      y: 40, scale: .96, opacity: 0, duration: 1.3, ease: EASE,
-      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+      y: 30, scale: .97, opacity: 0, duration: .9, ease: EASE,
+      scrollTrigger: { trigger: el, start: 'top 96%', once: true },
       clearProps: 'transform,opacity', // leave nothing behind: an offset left over once stuck the picker 36px low
     });
   });
@@ -152,14 +152,14 @@
   addEventListener('load', () => ScrollTrigger.refresh());
 
   /* safety net for slow or busy devices: if a scroll-triggered reveal has not played by the time the
-     element has been on screen for 1.5s, show it anyway. Content must never stay invisible. */
+     element has been on screen for 1s, show it anyway. Content must never stay invisible. */
   if ('IntersectionObserver' in window) {
     const targets = new Set();
     gsap.globalTimeline.getChildren(true, true, false).forEach((t) => (t.targets ? t.targets() : []).forEach((el) => el instanceof Element && targets.add(el)));
     const io = new IntersectionObserver((entries) => entries.forEach((e) => {
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
-      setTimeout(() => { if (parseFloat(getComputedStyle(e.target).opacity) < 0.5) gsap.to(e.target, { opacity: 1, y: 0, scale: 1, duration: .35, overwrite: true }); }, 1500);
+      setTimeout(() => { if (parseFloat(getComputedStyle(e.target).opacity) < 0.5) gsap.to(e.target, { opacity: 1, y: 0, scale: 1, duration: .35, overwrite: true }); }, 1000);
     }));
     targets.forEach((el) => io.observe(el));
   }
