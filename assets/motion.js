@@ -56,12 +56,14 @@
     gsap.from(el.children.length ? el.children : el, {
       y: 30, opacity: 0, duration: 1, ease: EASE, stagger: .08,
       scrollTrigger: { trigger: el, start: 'top 86%', once: true },
+      clearProps: 'transform,opacity', // leave nothing behind: an offset left over once stuck the picker 36px low
     });
   });
 
   /* ── 3. grids arrive one card after another, never all at once ─────────────────────── */
   const GRIDS = [
-    ['.dx-grid, .tiles', '.dx-tile, .tile'],
+    // the symptom picker is not animated: it is the first thing people tap, so it must be still and ready
+    ['.tiles', '.tile'],
     ['.cells', '.cell'],
     ['.wall-grid', '.rv'],
     ['.prod-grid', '.prod'],
@@ -80,6 +82,7 @@
         // cap the whole cascade near 0.8s: 120 review cards at .07s each took 8s to finish appearing
         stagger: { each: Math.min(.07, .8 / items.length), from: 'start' },
         scrollTrigger: { trigger: g, start: 'top 88%', once: true },
+      clearProps: 'transform,opacity', // leave nothing behind: an offset left over once stuck the picker 36px low
       });
     });
   }
@@ -89,6 +92,7 @@
     gsap.from(el, {
       y: 40, scale: .96, opacity: 0, duration: 1.3, ease: EASE,
       scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+      clearProps: 'transform,opacity', // leave nothing behind: an offset left over once stuck the picker 36px low
     });
   });
 
