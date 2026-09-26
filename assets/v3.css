@@ -1327,3 +1327,12 @@ section:not(.shop) .prod .wa-link, section:not(.shop) .prod .wa-link.dark { back
 .phero .tabs [role=tab] { color: var(--ink-2); border-color: var(--line-2); }
 .phero .tabs [role=tab][aria-selected="true"] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
 .phero .tabs { margin-top: 26px; }
+
+/* phone/tablet menu: backdrop-filter on the header makes it the containing block for the fixed
+   .sheet, which squeezed the whole menu into the 60px header. Solid header below desktop. */
+@media (max-width: 1023px) {
+  .hdr { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--paper); }
+  .mnav[open] .sheet { z-index: 60; }
+}
+/* anything the scripts hide stays hidden, whatever display a component sets (review filter showed all 120) */
+[hidden] { display: none !important; }
