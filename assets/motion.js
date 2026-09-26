@@ -146,6 +146,19 @@
 
   /* fonts and images can change the layout after this runs; re-measure once everything is in */
   addEventListener('load', () => ScrollTrigger.refresh());
+
+  /* safety net for slow or busy devices: if a scroll-triggered reveal has not played by the time the
+     element has been on screen for 1.5s, show it anyway. Content must never stay invisible. */
+  if ('IntersectionObserver' in window) {
+    const targets = new Set();
+    gsap.globalTimeline.getChildren(true, true, false).forEach((t) => (t.targets ? t.targets() : []).forEach((el) => el instanceof Element && targets.add(el)));
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      setTimeout(() => { if (parseFloat(getComputedStyle(e.target).opacity) < 0.5) gsap.to(e.target, { opacity: 1, y: 0, scale: 1, duration: .35, overwrite: true }); }, 1500);
+    }));
+    targets.forEach((el) => io.observe(el));
+  }
   // any later height change (late images, fonts, accordions) re-measures, so nothing is left hidden
   if ('ResizeObserver' in window) {
     let t; new ResizeObserver(() => { clearTimeout(t); t = setTimeout(() => ScrollTrigger.refresh(), 200); }).observe(document.body);
