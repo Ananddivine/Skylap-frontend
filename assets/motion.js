@@ -77,7 +77,8 @@
       if (!items.length) return;
       gsap.from(items, {
         y: 36, opacity: 0, duration: .9, ease: EASE,
-        stagger: { each: .07, from: 'start' },
+        // cap the whole cascade near 0.8s: 120 review cards at .07s each took 8s to finish appearing
+        stagger: { each: Math.min(.07, .8 / items.length), from: 'start' },
         scrollTrigger: { trigger: g, start: 'top 88%', once: true },
       });
     });

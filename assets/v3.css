@@ -723,7 +723,7 @@ section { padding: clamp(44px, 5vw, 78px) 0; }
 
 /* contact */
 .contact-hero { padding: 0 0 clamp(40px, 5vw, 72px); }
-.big-tel { font: 500 clamp(40px, 7vw, 104px)/1 var(--mono); letter-spacing: -.04em; margin: 12px 0 18px; }
+.big-tel { font: 500 clamp(28px, 10vw, 104px)/1 var(--mono); letter-spacing: -.04em; margin: 12px 0 18px; }
 .big-tel a { text-decoration: none; color: var(--ink); }
 .big-tel a:hover { color: var(--orange-ink); }
 .contact-grid { display: grid; gap: 36px; grid-template-columns: minmax(0, 1fr); margin-top: 32px; }
@@ -1336,3 +1336,12 @@ section:not(.shop) .prod .wa-link, section:not(.shop) .prod .wa-link.dark { back
 }
 /* anything the scripts hide stays hidden, whatever display a component sets (review filter showed all 120) */
 [hidden] { display: none !important; }
+/* open menu: the fixed Call/WhatsApp dock sat above the sheet and covered its last button */
+body:has(.mnav[open]) .dock { display: none; }
+.sheet { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+.svc-ill .panel-ill { position: relative; width: 78%; }
+/* small phones: 44px tap targets in the header. The header quote button gives way below 380px;
+   the bottom Call / WhatsApp dock carries the action there. */
+@media (max-width: 1023px) { .theme-toggle, .mnav summary { width: 44px; height: 44px; min-width: 44px; } }
+@media (max-width: 379px) { .hdr-act > .btn-primary { display: none; } }
+.theme-toggle { width: 44px; min-width: 44px; height: 44px; }
