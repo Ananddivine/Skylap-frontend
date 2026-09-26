@@ -14,83 +14,78 @@
       "permanent": true
     },
     {
-      "source": "/services",
-      "destination": "/services/",
-      "permanent": false
-    },
-    {
       "source": "/laptop-service-center-in/koramangala",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/marathahalli",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/electronic-city",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/indiranagar",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/banashankari",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/btm-layout",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/hsr-layout",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/jayanagar",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/rajajinagar",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/yelahanka",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/bellandur",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/sarjapur",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/hebbal",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/kr-puram",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     },
     {
       "source": "/laptop-service-center-in/mahadevapura",
-      "destination": "/pickup-areas/",
+      "destination": "/pickup-areas",
       "permanent": true
     }
   ],
