@@ -90,18 +90,64 @@
      people at the phone instead of pretending to send. */
   const ENQUIRY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbpfD_CeHhFDdOOZnypLL4m3fZXnRdBWJi9Iyd90gerbqnMD7ZlOztltvUFiW0c7wa9A/exec';
 
+  /* ── field rules: stop bad characters as they are typed, explain problems under the field ── */
+  const NAME_OK = /^[\p{L}\p{M}][\p{L}\p{M} .'-]*$/u;       // letters in any script, spaces, . ' -
+  const cleanName = (v) => v.replace(/[^\p{L}\p{M} .'-]/gu, '').replace(/\s{2,}/g, ' ').replace(/^[\s.'-]+/, '').slice(0, 50);
+  const cleanPhone = (v) => {
+    let d = v.replace(/\D/g, '');
+    if (d.length > 10 && d.startsWith('91')) d = d.slice(2);  // pasted +91 96061 20007
+    if (d.length > 10 && d.startsWith('0')) d = d.slice(1);   // pasted 096061 20007
+    return d.slice(0, 10);
+  };
+  const RULES = {
+    'qf-name': (v) => !v.trim() ? 'Please enter your name.' : v.trim().length < 2 ? 'Name must be at least 2 letters.' : !NAME_OK.test(v.trim()) ? 'Use letters only, no numbers or symbols.' : '',
+    'qf-phone': (v) => !v ? 'Please enter your mobile number.' : v.length < 10 ? `Mobile number must be 10 digits (${v.length} entered).` : !/^[6-9]\d{9}$/.test(v) ? 'Enter a valid Indian mobile number starting with 6, 7, 8 or 9.' : '',
+    'qf-issue': (v) => !v ? 'Please choose the closest problem.' : '',
+  };
+  const showErr = (el, msg) => {
+    const out = document.getElementById(el.id + '-err');
+    el.setCustomValidity(msg);
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    el.closest('.f')?.classList.toggle('has-err', !!msg);
+    if (out) out.textContent = msg;
+  };
+  const check = (el) => { const r = RULES[el.id]; if (r) showErr(el, r(el.value)); return !el.validationMessage; };
+  const validateAll = (focusFirst) => {
+    let first = null;
+    Object.keys(RULES).forEach((id) => { const el = document.getElementById(id); if (el && !check(el) && !first) first = el; });
+    if (first && focusFirst) first.focus();
+    return !first;
+  };
+  const nm = document.getElementById('qf-name'), ph = document.getElementById('qf-phone'), msg = document.getElementById('qf-msg'), issue = document.getElementById('qf-issue');
+  const touched = new Set();
+  if (nm) {
+    nm.addEventListener('input', () => { const c = cleanName(nm.value); if (c !== nm.value) nm.value = c; if (touched.has(nm)) check(nm); });
+    nm.addEventListener('blur', () => { nm.value = nm.value.trim(); touched.add(nm); check(nm); });
+  }
+  if (ph) {
+    ph.addEventListener('beforeinput', (e) => { if (e.inputType === 'insertText' && /\D/.test(e.data || '')) e.preventDefault(); });
+    ph.addEventListener('input', () => { const c = cleanPhone(ph.value); if (c !== ph.value) ph.value = c; if (touched.has(ph) || c.length === 10) { touched.add(ph); check(ph); } });
+    ph.addEventListener('blur', () => { touched.add(ph); check(ph); });
+  }
+  if (issue) issue.addEventListener('change', () => check(issue));
+  if (msg) {
+    const count = document.getElementById('qf-msg-count');
+    const upd = () => { if (msg.value.length > 500) msg.value = msg.value.slice(0, 500); if (count) count.textContent = `${msg.value.length} / 500`; };
+    msg.addEventListener('input', upd); upd();
+  }
+
   const qf = document.getElementById('qf');
   if (qf) qf.addEventListener('submit', async (e) => {
     e.preventDefault();
     const note = document.getElementById('qf-note');
     const btn = qf.querySelector('button[type=submit], .btn-primary');
-    if (!qf.checkValidity()) {
+    if (!validateAll(true)) {
       note.className = 'qf-note is-error';
-      note.textContent = 'Please add your name, a 10-digit mobile number and the closest problem.';
-      qf.reportValidity();
+      note.textContent = 'Please fix the highlighted field.';
       return;
     }
     const data = Object.fromEntries(new FormData(qf).entries());
+    data.name = (data.name || '').trim(); data.message = (data.message || '').trim().slice(0, 500);
     data.page = location.pathname;
     data.source = 'website';
 

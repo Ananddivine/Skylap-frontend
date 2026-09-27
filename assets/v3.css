@@ -1345,3 +1345,14 @@ body:has(.mnav[open]) .dock { display: none; }
 @media (max-width: 1023px) { .theme-toggle, .mnav summary { width: 44px; height: 44px; min-width: 44px; } }
 @media (max-width: 379px) { .hdr-act > .btn-primary { display: none; } }
 .theme-toggle { width: 44px; min-width: 44px; height: 44px; }
+/* form: +91 prefix, per-field errors, message counter */
+.f-tel { display: flex; align-items: stretch; }
+.f-cc { display: grid; place-items: center; padding: 0 12px; border: 1px solid var(--line-2); border-right: 0; border-radius: var(--r) 0 0 var(--r); background: var(--paper-2); color: var(--ink-2); font: 500 16px/1 var(--font); }
+.f-tel input { border-radius: 0 var(--r) var(--r) 0; min-width: 0; }
+.f-err { margin: -2px 0 0; min-height: 1.35em; font-size: 14px; line-height: 1.35; font-weight: 500; color: #A3261B; } /* space reserved: an error appearing on blur must never move the submit button out from under a tap */
+
+.f.has-err input, .f.has-err select, .f.has-err .f-cc { border-color: #C0392B; }
+.f.has-err input, .f.has-err select { box-shadow: 0 0 0 1px #C0392B inset; }
+.f-count { margin: 0; font-size: 13px; color: var(--ink-3); text-align: right; }
+:root[data-theme="dark"] .f-err { color: #FF8A7A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .f-err { color: #FF8A7A; } }
