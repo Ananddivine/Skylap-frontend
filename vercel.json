@@ -14,6 +14,26 @@
       "permanent": true
     },
     {
+      "source": "/Products",
+      "destination": "/parts",
+      "permanent": true
+    },
+    {
+      "source": "/product/:id",
+      "destination": "/parts",
+      "permanent": true
+    },
+    {
+      "source": "/About",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/Contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/laptop-service-center-in/koramangala",
       "destination": "/pickup-areas",
       "permanent": true
