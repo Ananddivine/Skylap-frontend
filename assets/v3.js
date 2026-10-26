@@ -159,7 +159,7 @@
          sheet instead — nothing here needs changing again. */
       const issueLabel = (qf.querySelector('#qf-issue')?.selectedOptions?.[0]?.textContent || data.issue || '').trim();
       const lines = [
-        'Hi SkyLap, I would like a repair quote.',
+        'Hi SkyLap (via skylap.in), I would like a repair quote.',
         '',
         `Name: ${data.name || ''}`,
         `Phone: ${data.phone || ''}`,
