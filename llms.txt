@@ -13,6 +13,7 @@
 - [Whitefield workshop](https://skylap.in/laptop-service-center-in/whitefield): how to find the first-floor workshop and what happens when you walk in
 - [Contact](https://skylap.in/contact): call, WhatsApp or walk in
 - [Pickup areas](https://skylap.in/pickup-areas): where free pickup and drop applies
+- [Laptops for offices](https://skylap.in/laptop-repair-for-business): bulk repairs, AMC / service contracts, on-site office visits, GST invoices
 - [Laptop repair in Bangalore](https://skylap.in/laptop-repair-bangalore): choosing where to repair a laptop in Bengaluru, and courier repairs from across the city
 - [About](https://skylap.in/about): the workshop
 - [Reviews](https://skylap.in/reviews): Google reviews, grouped by repair, shown as written
@@ -29,7 +30,7 @@
 - [SSD and RAM upgrade](https://skylap.in/services/laptop-ssd-ram-upgrade): speed up a slow laptop, data cloned across
 - [Data recovery](https://skylap.in/services/data-recovery-whitefield): files from dead laptops and failed disks
 - [Gaming laptop repair](https://skylap.in/services/gaming-laptop-repair): throttling, GPU not detected, high-refresh screens
-- [Software and Windows](https://skylap.in/services/laptop-virus-removal): boot loops, blue screens, corrupted OS
+- [Virus removal and Windows repair](https://skylap.in/services/laptop-virus-removal): pop-ups, malware, boot loops, blue screens, corrupted OS
 - Brands: [HP](https://skylap.in/services/hp-laptop-service-center-whitefield), [Dell](https://skylap.in/services/dell-laptop-service-center-whitefield), [Lenovo](https://skylap.in/services/lenovo-laptop-service-center-whitefield), [ASUS](https://skylap.in/services/asus-laptop-service-center-whitefield), [Acer](https://skylap.in/services/acer-laptop-service-center-whitefield)
 
 ## Laptop problems, answered

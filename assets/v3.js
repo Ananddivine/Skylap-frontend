@@ -57,6 +57,7 @@
       if (kind) kind.textContent = d.kind; if (text) text.textContent = d.text;
       if (link) { link.href = d.href; link.hidden = !d.href || d.href.startsWith('#'); }
       if (sel) sel.value = t.dataset.key;
+      const go = document.getElementById('dx-go'); if (go) go.href = 'contact.html?issue=' + encodeURIComponent(t.dataset.key) + '#quote-form';
     }));
   }
 
@@ -119,6 +120,8 @@
     return !first;
   };
   const nm = document.getElementById('qf-name'), ph = document.getElementById('qf-phone'), msg = document.getElementById('qf-msg'), issue = document.getElementById('qf-issue');
+  /* a fault picked on the home page arrives as ?issue=<key>; preselect it when the form offers it */
+  try { const want = new URLSearchParams(location.search).get('issue'); if (issue && want && [...issue.options].some((o) => o.value === want)) issue.value = want; } catch (e) { /* ignore */ }
   const touched = new Set();
   if (nm) {
     nm.addEventListener('input', () => { const c = cleanName(nm.value); if (c !== nm.value) nm.value = c; if (touched.has(nm)) check(nm); });
@@ -190,7 +193,7 @@
       if (!out.ok) throw new Error(out.note || 'rejected');
       qf.reset();
       note.className = 'qf-note is-ok';
-      note.textContent = 'Got it. We call you back on that number during opening hours, usually the same day. If it is urgent, call 96061 20007.';
+      note.textContent = 'Got it. We call you back on this number during opening hours, Mon–Sat 10am–8pm. In a hurry? Call 96061 20007.';
     } catch (err) {
       note.className = 'qf-note is-error';
       note.textContent = 'That did not send. Please call 96061 20007 or send a photo on WhatsApp and we will pick it up straight away.';
