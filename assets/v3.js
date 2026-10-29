@@ -192,6 +192,7 @@
       const out = await res.json().catch(() => ({ ok: res.ok }));
       if (!out.ok) throw new Error(out.note || 'rejected');
       qf.reset();
+      window.gtag?.('event', 'generate_lead', { lead_source: 'quote_form', issue: data.issue || '' });
       note.className = 'qf-note is-ok';
       note.textContent = 'Got it. We call you back on this number during opening hours, Mon–Sat 10am–8pm. In a hurry? Call 96061 20007.';
     } catch (err) {
@@ -212,6 +213,21 @@
     }));
   });
 })();
+
+/* Lead clicks to Google Analytics: every call, WhatsApp and directions link, with where on the page it
+   sat (header, dock, hero, a section id), so the daily report can say which buttons bring calls. */
+document.addEventListener('click', (e) => {
+  const a = e.target.closest?.('a[href]');
+  if (!a || !window.gtag) return;
+  const href = a.getAttribute('href');
+  const name = href.startsWith('tel:') ? 'call_click'
+    : /wa\.me|api\.whatsapp\.com/.test(href) ? 'whatsapp_click'
+    : /google\.[^/]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps/.test(href) ? 'directions_click' : '';
+  if (!name) return;
+  const spot = a.closest('.topbar') ? 'topbar' : a.closest('.hdr') ? 'header' : a.closest('.dock') ? 'dock'
+    : a.closest('footer') ? 'footer' : (a.closest('section[id], [id]')?.id || a.closest('section')?.className.split(' ')[0] || 'page');
+  window.gtag('event', name, { link_location: spot, link_text: a.textContent.trim().slice(0, 60), transport_type: 'beacon' });
+});
 
 /* Light / dark switch. The first press flips away from whatever is showing now, which with nothing
    stored is the device setting; the choice is remembered on this device only. */
